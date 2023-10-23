@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:indbytes_test/screens/announcement/bloc/chat_bloc.dart';
 import 'package:indbytes_test/screens/announcement/view/announcement.dart';
 
 void main() {
@@ -9,19 +11,22 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Indbytes',
-      theme: ThemeData(
-          primaryColor: mainAppColor,
-          primarySwatch: mainAppColor,
-          useMaterial3: true,
-          elevatedButtonTheme: ElevatedButtonThemeData(
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5)),
-                  foregroundColor: Colors.white,
-                  backgroundColor: mainAppColor))),
-      home: const AnouncementScreen(),
+    return BlocProvider<ChatBloc>(
+      create: (context) => ChatBloc(),
+      child: MaterialApp(
+        title: 'Indbytes',
+        theme: ThemeData(
+            primaryColor: mainAppColor,
+            primarySwatch: mainAppColor,
+            useMaterial3: true,
+            elevatedButtonTheme: ElevatedButtonThemeData(
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                    foregroundColor: Colors.white,
+                    backgroundColor: mainAppColor))),
+        home: const AnouncementScreen(),
+      ),
     );
   }
 }

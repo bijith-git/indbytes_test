@@ -1,10 +1,12 @@
+import 'dart:io';
+
 class Message {
+  final String msgId;
   final String message;
-  final bool isFile;
-  final String type;
+  final File? attachment;
   Message({
+    required this.msgId,
     required this.message,
-    required this.isFile,
-    required this.type,
+    this.attachment,
   });
 }

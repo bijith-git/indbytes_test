@@ -8,11 +8,12 @@ abstract class ChatEvent extends Equatable {
 }
 
 class SendMessageEvent extends ChatEvent {
+  final String id;
+  final File? file;
   final String message;
-  const SendMessageEvent(this.message);
-}
-
-class SendFileEvent extends ChatEvent {
-  final String filePath;
-  const SendFileEvent(this.filePath);
+  SendMessageEvent({
+    this.file,
+    required this.message,
+    required this.id,
+  });
 }
