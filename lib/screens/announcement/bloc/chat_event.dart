@@ -17,3 +17,10 @@ class SendMessageEvent extends ChatEvent {
     required this.id,
   });
 }
+
+class CreateButtonPress extends ChatEvent {
+  bool buttonPressed;
+  CreateButtonPress({
+    required this.buttonPressed,
+  });
+}
