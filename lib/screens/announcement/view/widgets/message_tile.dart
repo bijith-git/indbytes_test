@@ -56,7 +56,7 @@ class MessageTile extends StatelessWidget {
                                         MediaQuery.of(context).size.width /
                                             2.5),
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: mainAppColor.withOpacity(.4),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: Row(
                                   children: [
